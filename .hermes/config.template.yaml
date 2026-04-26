@@ -1,0 +1,35 @@
+# Hermes profile template for this workspace.
+# Copy relevant values into ~/.hermes/config.yaml or a Hermes profile config.
+
+model:
+  provider: openai
+  default: ${MODEL_NAME:-gpt-5.4-mini}
+  base_url: ${OPENAI_BASE_URL}
+  api_key: ${OPENAI_API_KEY}
+
+agent:
+  max_turns: 90
+  tool_use_enforcement: true
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+
+terminal:
+  cwd: .
+  timeout: 180
+
+# Enable these toolsets from `hermes tools` or config UI:
+# - terminal
+# - file
+# - skills
+# - memory
+# - session_search
+# - browser
+# - cronjob
+# - messaging
+# - todo
+
+# MCP servers are best added through:
+#   hermes mcp add <name> --command "..."
+# See .hermes/mcp/*.md for exact commands.
